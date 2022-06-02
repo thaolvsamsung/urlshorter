@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shorten Urls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Short URL</th>
+      <th>Click count</th>
+      <th>Created at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shorten_urls.each do |shorten_url| %>
+      <tr>
+        <td><%= shorten_url.url %></td>
+        <td><%= link_to(nil, short_link(shorten_url)) %></td>
+        <td align="center"><%= shorten_url.click_count %></td>
+        <td><%= shorten_url.created_at %></td>
+        <td><%= link_to 'Show', short_link(shorten_url) %></td>
+        <td><%= link_to 'Edit', edit_shorten_url_path(shorten_url) %></td>
+        <td><%= link_to 'Destroy', shorten_url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= paginate(@shorten_urls) %>
+<br>
+
+<%= link_to 'New Shorten Url', new_shorten_url_path %>

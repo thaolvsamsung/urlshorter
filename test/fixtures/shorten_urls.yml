@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner: one
+  owner_type: Owner
+  url: MyText
+  unique_key: MyString
+  click_count: 1
+  expires_at: 2022-06-02 16:22:05
+  created_at: 2022-06-02 16:22:05
+  updated_at: 2022-06-02 16:22:05
+  category: MyString
+
+two:
+  owner: two
+  owner_type: Owner
+  url: MyText
+  unique_key: MyString
+  click_count: 1
+  expires_at: 2022-06-02 16:22:05
+  created_at: 2022-06-02 16:22:05
+  updated_at: 2022-06-02 16:22:05
+  category: MyString

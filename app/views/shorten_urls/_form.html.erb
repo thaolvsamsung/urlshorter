@@ -1,0 +1,31 @@
+<%= form_with(model: shorten_url, local: true) do |form| %>
+  <% if shorten_url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shorten_url.errors.count, "error") %> prohibited this shorten_url from being saved:</h2>
+
+      <ul>
+      <% shorten_url.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.hidden_field :owner_id, {value: current_user.id} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_area :url , cols: 100 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unique_key, 'Unique key' %>
+    <%= form.text_field :unique_key %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
