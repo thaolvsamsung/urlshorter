@@ -14,6 +14,7 @@
 - Run the below command to start the application and databases
   ```
    rake db:migrate
+   bundle install
    rails s
   ```
   The above command will start the application in the daemon mode
